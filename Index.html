@@ -9,7 +9,7 @@
   <div id="chart"></div>
 
   <script>
-    const sheetUrl = 'https://docs.google.com/spreadsheets/d/ID_SHEET_KAMU/pub?output=csv';
+    const sheetUrl = ' https://docs.google.com/spreadsheets/d/e/2PACX-1vR6Qc2z7k_n0BzWS5VyB1bk9qHtffW7V3S58bfkY6yxCm8hreI7qkBIzlJ1k0udsrZLblyAOKSzSQUj/pubhtml?gid=0&single=true';
     Plotly.d3.csv(sheetUrl, function(err, rows) {
       const tanggal = rows.map(r => r['Tanggal']);
       const jumlah = rows.map(r => +r['Jumlah Follow Up']);
