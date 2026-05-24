@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Majoo Dashboard</title>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <h2>Dashboard Follow Up CS Majoo</h2>
+  <div id="chart"></div>
+
+  <script>
+    const sheetUrl = 'https://docs.google.com/spreadsheets/d/ID_SHEET_KAMU/pub?output=csv';
+    Plotly.d3.csv(sheetUrl, function(err, rows) {
+      const tanggal = rows.map(r => r['Tanggal']);
+      const jumlah = rows.map(r => +r['Jumlah Follow Up']);
+      const trace = { x: tanggal, y: jumlah, type: 'bar', marker: { color: 'teal' } };
+      Plotly.newPlot('chart', [trace]);
+    });
+  </script>
+</body>
+</html>
